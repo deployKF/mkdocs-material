@@ -410,9 +410,11 @@ export function setupInstantNavigation(
         setLocationHash(url.hash)
         history.scrollRestoration = "manual"
 
-        // Hack: we need to make sure that we don't end up with multiple history
-        // entries for the same anchor link, so we just remove the last entry
-        history.back()
+        // ================== BEGIN CHANGE ==================
+        // This line break instant navigation.
+        // When a user tries to navigate to same page after clicking back button.
+        //history.back()
+        // =================== END CHANGE ===================
       })
 
   // After parsing the document, check if the current history entry has a state.
